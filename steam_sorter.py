@@ -34,6 +34,6 @@ for game_id in games_owned_id:
         pass
 
 df = pd.DataFrame(my_games_and_user_scores.items(), columns=('Game', 'User Score'))
-df.sort_values(by=('User Score'), inplace=True, ascending=False)
+df.sort_values(by=('User Score'), inplace=True, ascending=False, ignore_index=True)
 
 df.to_csv('~/Desktop/mygames.csv')
