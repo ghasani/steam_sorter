@@ -16,8 +16,8 @@ def get_name(id):
 
 def get_score(id):
     data = requests.get(f'https://store.steampowered.com/appreviews/{id}?json=1').json()['query_summary']
-    return data['total_positive']/data['total_reviews']
-
+    score = data['total_positive']/data['total_reviews']
+    return score
 
 user_url = f'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={USER_API_KEY}&steamid={USER_STEAM_ID}&format=json'
 user_game_data = requests.get(url=user_url).json()
